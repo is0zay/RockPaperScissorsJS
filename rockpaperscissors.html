@@ -4,10 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="rockpaperscissors.js"></script>
+    <link rel="stylesheet" href="rockPaperScissors.css">
     <title>Document</title>
 </head>
 <body>
+    <div class="main">
+        <h1>Rock Paper Scissors</h1>
+        <h2>First To 5 Wins!</h2>
+
+
+        <div class="btnOptions">
+            <button id="rockBtn" value="rock"><img src="https://icon-library.com/images/rock-icon-png/rock-icon-png-29.jpg" alt="" height="100px"></button>
+            <button id="paperBtn" value="paper"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREkkuXnZfB0QP_tx9MtRsZY5rL366UzM23OSO7-ZZXxWqDxLk&s" alt="" height="100px"></button>
+            <button id="scissorsBtn" value="scissors"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSchIHQCHk1MJKnl5TZQ2b3maJlvZG6sLUqu1Z7WXJ2Z2dpQdk&s" alt="" height="100"></button>
+        </div>
+        
+        <div class="scoreLabels">
+            <div class="userLabel">Your Score</div>
+            <div class="compLabel">Computer Score</div>
+        </div>
+
+        <div class="scores">
+            <div id="userScore"></div>
+            <div id="comScore"></div>
+        </div>
+
+        <div><h3>Results</h3></div>
+        <div class="displayResults">
+
+        </div>
+
+        <div>
+            <button id="reset">Start New Game</button>
+        </div>
+
+    </div>
     
 </body>
+<script src="rockpaperscissors.js"defer></script>
 </html>

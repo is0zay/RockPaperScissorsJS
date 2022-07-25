@@ -1,7 +1,23 @@
-// Need array of rock paper and scissors
-//fuction to generate random 
-// user input
-//comparision function that displays answer
+
+
+const btnOptions = document.querySelectorAll('div.btnOptions button');
+const displayResults= document.querySelector('.displayResults');
+const userScore = document.querySelector('#userScore');
+const comScore = document.querySelector('#comScore');
+const newGameBtn = document.querySelector('#reset');
+
+/*const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors'); */
+
+const playerSelection = "";
+
+
+
+// button to reset game
+newGameBtn.addEventListener('click', () => location.reload());
+
+//check below
 
 
 function getComputerChoice () {
@@ -15,69 +31,137 @@ function getComputerChoice () {
     return choice;
 }
 
-const computerSelection = getComputerChoice();
+function endGame () {
+    btnOptions.forEach( elem => {
+        elem.disabled = true;
+    })
 
-const playerSelection = prompt("Please enter your choice between rock paper and scissors").toLowerCase();
+}
+
 
 let yourScore = 0;
 let compScore = 0;
 
 
-function playRound (computerSelection, playerSelection) {
+function playRound (playerSelection) {
+    const computerSelection = getComputerChoice();
+
     for (i = 0; i<1; i++) {
         if (computerSelection === "rock" && playerSelection === "rock") {
-            return alert("Tie Game! Rock versus Rock ");
+            displayResults.textContent = "Tie Game! Rock versus Rock";
+            userScore.textContent = `${yourScore}`;
+            comScore.textContent = `${compScore}`;
+
+            if (yourScore == 5) {
+                displayResults.textContent = "YOU WIN!!!";
+                endGame();
+            }else if(comScore == 5) {
+                displayResults.textContent = "YOU LOSE!!!";
+                endGame();
+            }else { return }
         }
         else if (computerSelection === "rock" && playerSelection === "paper") {
-            return alert("You Win! Paper beats Rock ");
-            return yourScore ++;
+            displayResults.textContent = "You Win! Paper beats Rock";
+            yourScore ++;
+            userScore.textContent = `${yourScore}`;
+            comScore.textContent = `${compScore}`;
+
+            if (yourScore == 5) {
+                displayResults.textContent = "YOU WIN!!!";
+                endGame();
+            }else if(comScore == 5) {
+                displayResults.textContent = "YOU LOSE!!!";
+                endGame();
+            }else { return }
         }
         else if (computerSelection === "rock" && playerSelection === "scissors") {
-            return alert("You Lose! Rock beats Scissors ");
-            return compScore++;
+            displayResults.textContent = "You Lose! Rock beats Scissors";
+            compScore++;
+            userScore.textContent = `${yourScore}`;
+            comScore.textContent = `${compScore}`;
+
+            if (yourScore == 5) {
+                displayResults.textContent = "YOU WIN!!!";
+                endGame();
+            }else if(comScore == 5) {
+                displayResults.textContent = "YOU LOSE!!!";
+                endGame();
+            }else { return }
         }
         else if (computerSelection === "paper" && playerSelection === "rock") {
-            return alert("You Lose! Paper beats Rock ");
-            return compScore++;
+            displayResults.textContent = "You Lose! Paper beats Rock";
+            compScore++;
+            userScore.textContent = `${yourScore}`;
+            comScore.textContent = `${compScore}`;
+
+            if (yourScore == 5) {
+                displayResults.textContent = "YOU WIN!!!";
+                endGame();
+            }else if(comScore == 5) {
+                displayResults.textContent = "YOU LOSE!!!";
+                endGame();
+            }else { return }
         }
         else if (computerSelection === "paper" && playerSelection === "paper") {
-            return alert("Tie Game! Paper versus Paper");
+            displayResults.textContent = "Tie Game! Paper versus Paper";
+            userScore.textContent = `${yourScore}`;
+            return comScore.textContent = `${compScore}`;
         }
         else if (computerSelection === "paper" && playerSelection === "scissors") {
-            return alert("You Win! Scissors beats Paper ");
-            return yourScore++;
+            displayResults.textContent ="You Win! Scissors beats Paper";
+            yourScore++;
+            userScore.textContent = `${yourScore}`;
+            comScore.textContent = `${compScore}`;
+
+            if (yourScore == 5) {
+                displayResults.textContent = "YOU WIN!!!";
+                endGame();
+            }else if(comScore == 5) {
+                displayResults.textContent = "YOU LOSE!!!";
+                endGame();
+            }else { return }
         }
         else if (computerSelection === "scissors" && playerSelection === "rock") {
-            return alert("You Win! Rock beats Scissors ");
-            return yourScore++;
+            displayResults.textContent ="You Win! Rock beats Scissors";
+            yourScore++;
+            userScore.textContent = `${yourScore}`;
+            comScore.textContent = `${compScore}`;
+
+            if (yourScore == 5) {
+                displayResults.textContent = "YOU WIN!!!";
+                endGame();
+            }else if(comScore == 5) {
+                displayResults.textContent = "YOU LOSE!!!";
+                endGame();
+            }else { return }
         }
         else if (computerSelection === "scissors" && playerSelection === "paper") {
-            return alert("You Lose! Scissors beats Paper ");
-            return compScore++;
+            displayResults.textContent = "You Lose! Scissors beats Paper";
+            compScore++;
+            userScore.textContent = `${yourScore}`;
+            comScore.textContent = `${compScore}`;
+
+            if (yourScore == 5) {
+                displayResults.textContent = "YOU WIN!!!";
+                endGame();
+            }else if(comScore == 5) {
+                displayResults.textContent = "YOU LOSE!!!";
+                endGame();
+            }else { return }
         }
         else if (computerSelection === "scissors" && playerSelection === "scissors") {
-            return alert("Tie Game! Scissors versus Scissors ");
+            displayResults.textContent = "Tie Game! Scissors versus Scissors";
+            userScore.textContent = `${yourScore}`;
+            return comScore.textContent = `${compScore}`;
         }
-        else {
-            return alert("Invalid kkkInput");
-        } return;
-    }
+            
+    } console.log(yourScore, compScore);
  }
 
-alert(playRound(computerSelection,playerSelection));
-console.log(compScore, yourScore);
 
-function game () {
-
-    
-    for (let i = 0; i < 5; i++) {
-        playRound(computerSelection, playerSelection);
-        return console.log(yourScore, compScore);
-    
-
-    }
-    
-}
-
-;
+btnOptions.forEach( button => {
+    button.addEventListener('click', function () {
+        playRound(button.value);
+    })
+})
 
