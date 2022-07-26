@@ -4,8 +4,99 @@ body {
     
 }
 .main {
+    padding: 2% 33%;
     
 }
 h1 {
+    font-size: 60px;
     font-weight: 900;
+    color: #fff;
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #11294e,
+    0 0 82px #11294e,
+    0 0 151px #11294e;
+
+    text-align: center;
+}
+h2 {
+    font-weight: 900;
+    font-size: 50px;
+    text-align: center;
+}
+h3 {
+    font-weight: 900;
+    font-size: 30px;
+    text-align: center;
+}
+.btnOptions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    
+    
+}
+.scoreLabels{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    text-align: center;
+    padding-top: 8%;
+    padding-bottom: 8%;
+    font-size: 24px;
+    
+}
+.scores {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:8px;
+    text-align: center;
+    padding-top: 8%;
+    font-size: 24px;
+    border: 1px dotted  #fff;
+    box-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #11294e,
+    0 0 82px #11294e,
+    0 0 151px #11294e;
+    
+    
+}
+#userScore, #comScore{
+    padding-bottom: 15%;
+}
+
+.displayResults {
+    text-align: center;
+    padding-top: 8%;
+    font-size: 24px;
+    padding-bottom: 8%;
+    border: 1px dotted  #fff;
+    box-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #11294e,
+    0 0 82px #11294e,
+    0 0 151px #11294e;
+
+}
+.reset {
+    padding-top: 12%;
+    padding-left: 27%;
+}
+#reset {
+    background-color: rgba(0, 0, 0, 0.795);
+    color: azure;
+    padding: 5% 12%;
+    box-shadow: 0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #11294e,
+    0 0 82px #11294e,
+    0 0 151px #11294e;;
 }
