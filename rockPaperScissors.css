@@ -36,7 +36,10 @@ h3 {
     grid-template-columns: repeat(3, 1fr);
     gap: 8px;
     
-    
+}
+
+button {
+    background-color: #464646;
 }
 .scoreLabels{
     display: grid;
